@@ -11,10 +11,8 @@
         config.allowUnfree = true;
       };
     in {
-        devShells.${system}.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ 
-            clang-tools              
-        ];
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = with pkgs; [ clang-tools ghidra unzip ];
 
         shellHook = ''
           echo "i run"
